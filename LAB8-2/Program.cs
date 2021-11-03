@@ -11,18 +11,18 @@ namespace LAB8_2
     {
         static void Main(string[] args)
         {
-            string path = "C:/Windows/";
+            string path = "C:/Windows";
             string[] dirs = Directory.GetDirectories(path);
-            Console.WriteLine("{0}", dirs.Length);
+            Console.WriteLine("всего директорий {0}", dirs.Length);
             foreach (string dir in dirs)
             {
-                Console.WriteLine("{0}", dir);
                 string[] subdirs = Directory.GetDirectories(dir);
-                int n = subdirs.Length;
+                Console.WriteLine("{0}", dir);
+                Console.WriteLine("Всего поддерикторий: {0}", dir.Length);
                 foreach (string subdir in subdirs)
                 {
-                    Console.WriteLine("{0}", subdir);
-                    Console.WriteLine("Всего ПОД-подкаталогов: {0}", subdir.Length);
+                      Console.WriteLine("поддериктория: {0}", subdir);
+                      Console.WriteLine("Всего под-поддерикторий: {0}", subdir.Length);
                 }
             }
             Console.ReadKey();

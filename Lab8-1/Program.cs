@@ -11,7 +11,22 @@ namespace Lab8_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("а");
+            string path = "Logs/";
+            DirectoryInfo directory = new DirectoryInfo(path);
+            if (!directory.Exists)
+            {
+                directory.Create();
+            }
+            string filepath = "rd.txt";
+            File.Create(path+filepath);
+            if (!File.Exists(path + filepath))
+            {
+                File.Create(path + filepath);
+            }
+            Console.WriteLine("файл создан {0}", (path + filepath));
+            StreamWriter sw = new StreamWriter((path + filepath),true);
+            sw.WriteLine("11");
+            sw.Close();
             Console.ReadKey();
         }
     }
